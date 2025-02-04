@@ -65,3 +65,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+
+gem 'pg'
+gem 'devise'
+gem 'devise-i18n'
+gem 'dotenv-rails', groups: [:development, :test]
