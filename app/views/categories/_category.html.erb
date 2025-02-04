@@ -1,12 +1,14 @@
-<div id="<%= dom_id category %>">
-  <p>
-    <strong>Description:</strong>
+<tr id="<%= dom_id category %>">
+  <td>
     <%= category.description %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Active:</strong>
+  <td>
     <%= category.active %>
-  </p>
+  </td>
 
-</div>
+  <td>
+    <%= link_to "Show this category", category %>
+  </td>
+
+</tr>
