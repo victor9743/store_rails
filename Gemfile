@@ -71,3 +71,5 @@ gem 'pg'
 gem 'devise'
 gem 'devise-i18n'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'bootstrap'
+gem "sassc-rails", "~> 2.1"
