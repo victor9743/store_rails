@@ -57,11 +57,30 @@ unless Rails.env.production?
 
     puts I18n.t("db_seed.product.save_success")
 
-    # Product.find_or_create_by(title: product["title"]) do |p|
-    #     p.price = product["price"]
-    #     p.description = product["description"]
-    #   end
-    #users = fetch_api_data('https://fakestoreapi.com/users')
+    # users
+    users = fetch_api_data('https://fakestoreapi.com/users')
+
+    if users.nil?
+        puts I18n.t("db_seed.errors.warning_users")
+        exit
+    end
+
+    users.each do |u|
+        User.find_or_create_by(email: u["email"]) do |user|
+            user.username = u["username"]
+            user.firstname = u["name"]["firstname"]
+            user.lastname = u["name"]["lastname"]
+            user.password = u["password"]
+            user.password_hint = u["password"]
+        end
+    end
+
+    if Product.all.size == 0
+        puts I18n.t("db_seed.errors.warning_users")
+        exit
+    end
+    
+    puts I18n.t("db_seed.user.save_success")
     puts I18n.t("db_seed.end")
 else
     puts I18n.t("db_seed.errors.warning_production")

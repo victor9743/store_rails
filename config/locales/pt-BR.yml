@@ -5,8 +5,11 @@ pt-BR:
       warning_categories: "❌ Nenhuma categoria foi carregada da api."
       size_category: "❌ Não é possivel cadastrar o produto, pois não existe nenhuma categoria cadastrada."
       warning_products: "❌ Nenhum produto foi carregado da api."
+      warning_users: "❌ Nenhum usuário foi carregado da api."
     category:
       save_success: "✅ Categorias criadas com sucesso"
     product:
       save_success: "✅ Produtos criados com sucesso"
+    user:
+      save_success: "✅ Usuários criados com sucesso"
     end: "✅ Fim do seed.rb"
